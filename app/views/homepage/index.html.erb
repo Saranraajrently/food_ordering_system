@@ -3,13 +3,25 @@
 <p>Fetching Data From the DATABASE</p>
 
 
-<ul>
-  <% @users.each do |user| %>
-    <li>
-      <%= user.username %>
-      <%= user.user_password %>
-      <%= user.user_address %>
-      <%= user.user_phonenumber %>
-    </li>
-  <% end %>
-</ul>
+<table>
+  <tr>
+    <td>
+      User Id
+    </td>
+    <td>
+      Name
+    </td>
+   
+  </tr>
+  <th>
+
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.id %> </td>
+      <td>   <a href="/user/<%= user.id %>">
+        <%= user.username %>
+      </td>
+      <% end %>
+    </tr>
+  </th>
+</table>
